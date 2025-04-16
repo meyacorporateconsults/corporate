@@ -1522,7 +1522,7 @@ hr {
   position: relative;
   border-style: solid;
   border-width: 3px;
-  border-top-color: #5e92b2;
+  border-top-color: #ad790c;
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -1538,7 +1538,7 @@ hr {
   transition: 0.6s;
 }
 .preloader .preloader-circle2 {
-  border-top-color: #0078ff;
+  border-top-color: #ad790c;
 }
 .preloader .preloader-img {
   position: absolute;
