@@ -25,7 +25,7 @@
     // Validate service selection (required)
     const service = formData.get("select");
     console.log("Service value:", service);
-    
+
     if (!service || service.trim() === "") {
       errors.service = "Please select a service";
       isValid = false;
@@ -102,7 +102,7 @@
       const formValues = {
         name: formData.get("name"),
         phone: formData.get("email"), // Note: incorrectly named 'email' in HTML
-        service: formData.get("select"), // Using the value of the selected option
+        field: formData.get("select"), // Using the value of the selected option
         email: formData.get("subject"), // Note: incorrectly named 'subject' in HTML
         message: formData.get("message"),
       };
@@ -127,7 +127,16 @@
       contactForm.reset();
 
       // Add success message to the form
-      contactForm.appendChild(successMessage);
+
+      emailjs
+        .send("service_id", "template_id", formValues, "public_key")
+        .then(function (response) {
+          console.log("Email sent successfully:", response);
+          contactForm.appendChild(successMessage);
+        })
+        .catch(function (error) {
+          console.error("Email sending failed:", error);
+        });
 
       // Remove success message after 5 seconds
       setTimeout(() => {
