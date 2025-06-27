@@ -59,7 +59,7 @@ $(document).ready(function () {
         },
         submitHandler: function (form) {
           emailjs
-            .send("service_id", "template_id", formValues, "public_key")
+            .send("sservice_name", "template_name", formValues, "public_key")
             .then(function (response) {
               $("#contactForm :input").attr("disabled", "disabled");
               $("#contactForm").fadeTo("slow", 1, function () {

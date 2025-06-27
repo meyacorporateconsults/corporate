@@ -129,7 +129,7 @@
       // Add success message to the form
 
       emailjs
-        .send("service_id", "template_id", formValues, "public_key")
+        .send("service_name", "template_id", formValues, "public_key")
         .then(function (response) {
           console.log("Email sent successfully:", response);
           contactForm.appendChild(successMessage);
